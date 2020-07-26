@@ -11,11 +11,17 @@ int rec(int* ptr1, int* ptr2, int* ptr3)//1, 2, 3
 }
 int main(void)
 {
-	int num1 = 1;
-	int num2 = 2;
-	int num3 = 3;
+	int num1, num2, num3;
+	printf("1.수를 입력>>");
+	scanf_s("%d", &num1);
+	printf("\n2.수를 입력>>");
+	scanf_s("%d", &num2);
+
+	printf("\n3.수를 입력>>");
+	scanf_s("%d", &num3);
+	printf("\n(번쨰)1 > 2 2 > 3 3 > 1수를 변경합니다.");
 	rec(&num1, &num2, &num3);
 
-	printf("num1 > %d num2 > %d num3 > %d 로 다 변경을 확인하시오\n", num1, num2, num3);
+	printf("\nnum1 > %d\nnum2 > %d \nnum3 > %d \n로 다 변경을 확인하시오\n", num1, num2, num3);
 	return 0;
 }
