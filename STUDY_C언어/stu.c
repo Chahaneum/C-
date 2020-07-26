@@ -1,22 +1,21 @@
 ﻿#include <stdio.h>
-int Sq(int num)//call-by-value
+int rec(int* ptr1, int* ptr2, int* ptr3)//1, 2, 3
 {
-		return num * num;
-	
-}
-int Sqb(int* ptr)//call-by-reference
-{
-	int num = *ptr;
+	//수를 바꾸는 함수를 정의구역
+	int num1 = *ptr1;//num1 = 1
+	int num3 = *ptr3;
+	*ptr1 = *ptr2;//1 = 2
+	*ptr2 = num3;// 2 = 3
+	*ptr3 = num1;
 
-	*ptr = num * num;
 }
-
 int main(void)
 {
-	int num = 12;
+	int num1 = 1;
+	int num2 = 2;
+	int num3 = 3;
+	rec(&num1, &num2, &num3);
 
-	printf("num의 제곱 : %d\n", Sq(num));
-	Sqb(&num);//Sqb가 num을 가리키게 한다(포인터라서..)
-	printf("num의 제곱 : %d\n", num);
+	printf("num1 > %d num2 > %d num3 > %d 로 다 변경을 확인하시오\n", num1, num2, num3);
 	return 0;
 }
