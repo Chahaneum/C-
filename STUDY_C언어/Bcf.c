@@ -1,10 +1,13 @@
-﻿//한글
+﻿//프로그램 완성 완료.
 #define _CRT_SECURE_NO_WARNINGS//scanf보안 오류.
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(void)
+int main_Sssssssssssssssssssssssss(void)
 {
 	int inti;//int형을 받는 변수
+	int choose = 0;
+	int choose2 = 0;
 	int dou = 209310923923;//double형을 받는 변수
 	char name[100];//이름 받는 변수
 	int humannumbers;//주민등록 변수
@@ -22,13 +25,12 @@ int main(void)
 	}
 	in += i;
 
-	printf("FASGAA DEVOS' : bcti : %d\n", dou);
-	printf("test : %din\n", in);
-	printf("1 >> PC_PLLC_EBN\n2 >> Bcf_EBN\n(여기서 EBN은 fasys_Sec에서 보호되는 것을 뜻합니다)\n");
+	printf("PC SEC : bcti : %d\n", dou);
+	printf("1 >> PC_PLLC_EBN 발급\n2 >> Bcf_EBN 발급\n3 >> Dvne\n4 >> 사용설명서\n");
 	printf("input>>");
 	scanf("%d", &inti);
-
-	if (inti == 1)
+A:
+	if (inti == 1 || choose == 1)
 	{
 		printf("이름>>");
 		scanf("%s", name);
@@ -123,48 +125,464 @@ int main(void)
 		printf("\nPC_PLLC_USER : %d_%d_%s", a1, t6, name);
 		printf("\nPC_PPLCE_USER : %d_%d_%d", b1, t10, c11);
 		printf("\nUSER-Key : %d_%d_%d", d1, f1, g1);
+		printf("\n다른모드로 전환 >> 1");
+		printf("\n끝내기 >> 2");
+		printf("\n입력>>");
+		scanf("%d", &choose2);
+
+		if (choose2 == 1)
+		{
+			printf("PC SEC : bcti : %d\n", dou);
+			printf("1 >> PC_PLLC_EBN 발급\n2 >> Bcf_EBN 발급\n3 >> Dvne\n4 >> 사용설명서\n");
+			printf("input>>");
+			scanf("%d", &choose);
+
+			if (choose == 1)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("PC_PCCL발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto A;
+				return;
+			}//else if choose == 1
+
+			else if (choose == 2)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("Bcf발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto B;
+				return;
+			}//else if choose == 2
+
+			else if (choose == 3)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("Dvne발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto C;
+				return;
+			}//else if choose == 3
+
+			else if (choose == 4)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("사용설명서가 로드됩니다...[%d남음]\n", i);
+				}
+				goto D;
+				return;
+			}//else if choose == 4
+			else
+			{
+				return 0;
+			}
+		}//if == choose 1
+
+		if (choose2 == 2)
+		{
+			for (i = 0; i <= 10; i++)
+			{
+				printf("종료됩니다...[%d남음]\n", i);
+			}
+			printf("GOODBYE!\n");
+			return 0;//영향을 안미침 goto에
+
+		}//종료
+
+		else
+		{
+			return 0;
+		}
 	}
-	else if (inti == 2)
+B:
+	if (inti == 2 || choose == 2)
 	{
-		printf("\n주의 웬만한 경우는 PC_PLLC를 발급하신후에 Bcf도 발급을 해주세요.");
+		int fcrw, pplce, dcf_user;
+		double ucfs = inti + 31.2390;
+
+		printf("\nPC SEC : UCFS : %f", ucfs);
+		printf("\n주의 : 웬만한 경우는 PC_PLLC를 발급하신후에 Bcf도 발급을 해주세요.");
 		printf("\n만약 USER-키가 생각이 나지 않으시다면 001를 계속 입력후에 마지막에 '키찾기'를 들어가주세요.");
 		printf("\nBcf는 개발자와 고급사용자를 위한 KEY입니다.");
 		printf("\n이름>>");
+		scanf("%s", name);
+		printf("\n주민등록번호(200001230처럼)>>");
+		scanf("%d", &humannumbers);
+		printf("\nUCFS 입력(자동가입방지)>>");
+		scanf("%f", &ucfs);
+	
+		while (name[is] != '\0')
+		{
+			is++;
+		}
+
 		printf("\nfcrw 2줄(00_00(여기)_00_00)에 9자리수까지 입력>>");
+		scanf("%d", &fcrw);
 		printf("\nUSER-KEY와 Dcf를 동시에 입력(UK = 4자리까지, Dcf = 6자리까지)>>");
+		scanf("%d", &dcf_user);
 		printf("\nPC_PPLCE_USER를 전체 입력(띄어쓰기 x)>>");
+		scanf("%d", &pplce);
 
-		printf("\nBcf발급이 진행중입니다..[%d남음]\n");
-		printf("\nBcf : %d_%d_%d_%d_%d_%d_%d_%d_%d_%d\n");
-		printf("\nCFF : %d_%d_%d\n");
-		printf("\nPVCR : %d_%d_%s");
+		int l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, nm1, nm2, nm3;
+		l1 = fcrw + pplce;
+		l2 = dcf_user + l1 * 231;
+		l3 = l2 + l1;
+		l4 = l3 - l2 * fcrw;
+		l5 = l4 + pplce;
+		l6 = l5 - l1 + l3 * 21321;
+		l7 = l6 - l5 + l4 * fcrw;
+		l8 = l6 - l7 + dcf_user;
+		l9 = l8 + l1;
+		l10 = l1 + l9 - pplce;
+		nm1 = l1 * l2;
+		nm2 = nm1 + l3;
+		nm3 = nm2 + nm1 - fcrw;
+		for (i = 0; i <= 50; i++)
+		{
+			printf("\nBcf발급이 진행중입니다..[%d남음]\n", i);
+		}
+		in += i;
 
-		printf("\n");
-		printf("\n");
+		int a = l1 + l2;
+		int b = l2 + l3;
+		int c = l3 + l4;
+		int d = l4 - l5;
+		int e = l5 - l6 + l5;
+		int f = l1 + l9;
+		printf("\nBcf : %d_%d_%d_%d_%d_%d_%d_%d_%d_%d\n",a,b,c,d,e,f,nm2, nm1 - l10, nm3, a + b);
+		printf("\nCFF : %d_%d_%d\n", a - b, b-c, c-d);
+		printf("\nPVCR : %d_%d_%s\n", nm1 + nm2 + humannumbers - e * f,f- e+ 1923,name);
 
-		printf("\n");
+		printf("\n다른모드로 전환 >> 1");
+		printf("\n끝내기 >> 2");
+
+		printf("\n입력>>");
+		scanf("%d", &choose2);
+
+		if (choose2 == 1)
+		{
+			printf("PC SEC : bcti : %d\n", dou);
+			printf("1 >> PC_PLLC_EBN 발급\n2 >> Bcf_EBN 발급\n3 >> Dvne\n4 >> 사용설명서\n");
+			printf("input>>");
+			scanf("%d", &choose);
+
+			if (choose == 1)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("PC_PCCL발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto A;
+				return;
+			}//else if choose == 1
+
+			else if (choose == 2)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("Bcf발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto B;
+				return;
+			}//else if choose == 2
+
+			else if (choose == 3)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("Dvne발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto C;
+				return;
+			}//else if choose == 3
+
+			else if (choose == 4)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("사용설명서가 로드됩니다...[%d남음]\n", i);
+				}
+				goto D;
+				return;
+			}//else if choose == 4
+			else
+			{
+				return 0;
+			}
+		}//if == choose 1
+
+		if (choose2 == 2)
+		{
+			for (i = 0; i <= 10; i++)
+			{
+				printf("종료됩니다...[%d남음]\n", i);
+			}
+			printf("GOODBYE!\n");
+			return 0;//영향을 안미침 goto에
+		
+		}//종료
+
+		else
+		{
+			return 0;
+		}
+		return 0;//영향을 안미침 goto에
+	
+	}//if inti == 2
+
+
+C:
+	if (inti == 3 || choose == 3)
+	{
+		for (i = 0; i <= 50; i++)
+		{
+			printf("Dvne발급이 로드됩니다...[%d남음]\n", i);
+		}
+		int de = 99039123 - choose + inti + 3901923 - 39123;
+		printf("\nDven는 자동가입방지를 위한 키입니다(모든 사용자가 동일)");
+		printf("\nDven : %d_%d\n", de + 1903, de - 0 * 777328);
+		printf("\n다른모드로 전환 >> 1");
+		printf("\n끝내기 >> 2");
+
+		printf("\n입력>>");
+		scanf("%d", &choose2);
+
+		if (choose2 == 1)
+		{
+			printf("PC SEC : bcti : %d\n", dou);
+			printf("1 >> PC_PLLC_EBN 발급\n2 >> Bcf_EBN 발급\n3 >> Dvne\n4 >> 사용설명서\n");
+			printf("input>>");
+			scanf("%d", &choose);
+
+			if (choose == 1)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("PC_PCCL발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto A;
+				return;
+			}//else if choose == 1
+
+			else if (choose == 2)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("Bcf발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto B;
+				return;
+			}//else if choose == 2
+
+			else if (choose == 3)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("Dvne발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto C;
+				return;
+			}//else if choose == 3
+
+			else if (choose == 4)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("사용설명서가 로드됩니다...[%d남음]\n", i);
+				}
+				goto D;
+				return;
+			}//else if choose == 4
+			else
+			{
+				return 0;
+			}
+		}//if == choose 1
+
+		if (choose2 == 2)
+		{
+			for (i = 0; i <= 10; i++)
+			{
+				printf("종료됩니다...[%d남음]\n", i);
+			}
+			printf("GOODBYE!\n");
+			return 0;//영향을 안미침 goto에
+
+		}//종료
+
+		else
+		{
+			return 0;
+		}
+		return 0;//영향을 안미침 goto에
 	}
+D:
+	if (inti == 4 || choose == 4)
+	{
+		for (i = 0; i <= 50; i++)
+		{
+			printf("사용설명서 발급이 로드됩니다...[%d남음]\n", i);
+		}
+		printf("\n여기서 발급이 되는 키는 모든 브라우저, USER-KEY를 지원하는 모든 은행에서 사용이 가능합니다.");
+		printf("\n보안프로그램 설치후 발급을 받으시는것을 권장합니다(추천 목록 : v3sLite , 윈도우 보안)");
+		printf("\n여기서 만들어진 정보는 보안 규칙에 따라서 저장이 되지 않으니 꼭 기억하시길 바랍니다.");
+		printf("\n다른모드로 전환 >> 1");
+		printf("\n끝내기 >> 2");
+
+		printf("\n입력>>");
+		scanf("%d", &choose2);
+
+		if (choose2 == 1)
+		{
+			printf("PC SEC : bcti : %d\n", dou);
+			printf("1 >> PC_PLLC_EBN 발급\n2 >> Bcf_EBN 발급\n3 >> Dvne\n4 >> 사용설명서\n");
+			printf("input>>");
+			scanf("%d", &choose);
+
+			if (choose == 1)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("PC_PCCL발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto A;
+				return;
+			}//else if choose == 1
+
+			else if (choose == 2)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("Bcf발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto B;
+				return;
+			}//else if choose == 2
+
+			else if (choose == 3)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("Dvne발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto C;
+				return;
+			}//else if choose == 3
+
+			else if (choose == 4)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("사용설명서가 로드됩니다...[%d남음]\n", i);
+				}
+				goto D;
+				return;
+			}//else if choose == 4
+			else
+			{
+				return 0;
+			}
+		}//if == choose 1
+
+		if (choose2 == 2)
+		{
+			for (i = 0; i <= 10; i++)
+			{
+				printf("종료됩니다...[%d남음]\n", i);
+			}
+			printf("GOODBYE!\n");
+			return 0;//영향을 안미침 goto에
+
+		}//종료
+
+		else
+		{
+			return 0;
+		}
+		return 0;//영향을 안미침 goto에
+
+	}
+
 	else
 	{
-		printf("\n");
-		printf("\n");
+		printf("잘못 입력하셨습니다.(오류 코드 f1/09412)\n");
+		printf("\n다른모드로 전환 >> 1");
+		printf("\n끝내기 >> 2");
 
-		printf("\n");
-		printf("\n");
+		printf("\n입력>>");
+		scanf("%d", &choose2);
 
-		printf("\n");
+		if (choose2 == 1)
+		{
+			printf("PC SEC : bcti : %d\n", dou);
+			printf("1 >> PC_PLLC_EBN 발급\n2 >> Bcf_EBN 발급\n3 >> Dvne\n4 >> 사용설명서\n");
+			printf("input>>");
+			scanf("%d", &choose);
 
+			if (choose == 1)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("PC_PCCL발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto A;
+				return;
+			}//else if choose == 1
 
-		printf("\n");
-		printf("\n");
+			else if (choose == 2)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("Bcf발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto B;
+				return;
+			}//else if choose == 2
 
+			else if (choose == 3)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("Dvne발급이 로드됩니다...[%d남음]\n", i);
+				}
+				goto C;
+				return;
+			}//else if choose == 3
 
+			else if (choose == 4)
+			{
+				for (i = 0; i <= 50; i++)
+				{
+					printf("사용설명서가 로드됩니다...[%d남음]\n", i);
+				}
+				goto D;
+				return;
+			}//else if choose == 4
+		}//if == choose 1
 
+		if (choose2 == 2)
+		{
+			for (i = 0; i <= 10; i++)
+			{
+				printf("종료됩니다...[%d남음]\n", i);
+			}
+			printf("GOODBYE!\n");
+			return 0;//영향을 안미침 goto에
 
-		printf("\n");
-		printf("\n");
+		}//종료
 
-
+		else
+		{
+			return 0;
+		}
+	
+		return 0;//영향을 안미침 goto에
+	
 	}
+	system("pause");
 	return 0;
 }
