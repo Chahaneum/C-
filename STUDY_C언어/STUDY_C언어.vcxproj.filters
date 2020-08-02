@@ -18,7 +18,7 @@
     <ClCompile Include="stu.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Bcf.c">
+    <ClCompile Include="활용.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
