@@ -11,7 +11,7 @@ int DesSort(int arr[], int len)
 	{
 		for (j = 0; j < (len - i) - 1; j++)
 		{
-			if (arr[j] < arr[j + 1])
+			if (arr[j] > arr[j + 1])
 			{
 				te = arr[j];
 				arr[j] = arr[j + 1];
@@ -22,20 +22,14 @@ int DesSort(int arr[], int len)
 }
 int main(void)
 {
-	int arr[7];
+	int arr[4] = { 3,2,1,4 };
 	int i;
-
-	for (i = 0; i < 7; i++)
-	{
-		printf("\n정수를 입력)>>");
-		scanf("%d", &arr[i]);
-	}
 
 	DesSort(arr, sizeof(arr) / sizeof(int));
 
-	for (i = 0; i < 7; i++)
+	for (i = 0; i < 4; i++)
 	{
-		printf("내림차순으로 정렬된것 : %d \n", arr[i]);
+		printf(": %d ", arr[i]);
 
 	}
 	return 0;
