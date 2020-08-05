@@ -25,7 +25,7 @@ int main(void)
 	int arr[4] = { 3,2,1,4 };
 	int i;
 
-	DesSort(arr, sizeof(arr) / sizeof(int));
+	DesSort(arr, sizeof(arr) / sizeof(int));ㅇ
 
 	for (i = 0; i < 4; i++)
 	{
