@@ -3,18 +3,17 @@
 #include <stdlib.h>
 #include <time.h>
 
+//fgetc stdin 함수 익히기
 int main(void)
 {
-	int a;
-	int b;
+	int  num, i, j;
 
-	scanf("%d", &b);
-	printf("\n");
-
-	srand((int)time(NULL));
-	for (a = 0; a < b; a++)
+	char l[7];
+	
+	for (i = 0; i < 5; i++)
 	{
-		printf("주사위 %d번 %d \n",a + 1, rand() % 7);
+		fgets(l, sizeof(l), stdin);
+		printf("READ %d : %s \n", i + 1, l);
 	}
 	return 0;
 }
