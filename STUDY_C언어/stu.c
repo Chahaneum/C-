@@ -2,18 +2,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 //fgetc stdin 함수 익히기
 int main(void)
 {
-	int  num, i, j;
-
-	char l[7];
+	char str[7];
 	
-	for (i = 0; i < 5; i++)
+	int i;
+
+	for (i = 0; i < 10; i++)
 	{
-		fgets(l, sizeof(l), stdin);
-		printf("READ %d : %s \n", i + 1, l);
+		gets(str);//이롷개 사용할 수있다.
+		printf("HElss %d\n", i);
+		
 	}
+
+
+	
 	return 0;
 }
