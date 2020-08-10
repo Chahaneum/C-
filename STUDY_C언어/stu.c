@@ -1,58 +1,32 @@
-﻿#include <stdio.h>
-
-void ShowArr(int(*arr)[4]);
-void RotateArr(int(*arr)[4]);
-
-int main_Sssssssssssssssssss(void)
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//100점 통과!
+int main(void)
 {
-	int i = 0;
-
-	int arr[4][4] = {
-		{1,		2,		3,		4},
-		{5,		6,		7,		8},
-		{9,		10,		11,		12},
-		{13,	14,		15,		16},
+	struct book
+	{
+		char title[100];
+		char Author_name[20];
+		int number;
 	};
 
-	for (i = 0; i < 4; i++)
+	struct book b[3];
+	int i;
+	printf("도서 정보 입력\n");
+	for (i = 0; i < 3; i++)
 	{
-		ShowArr(arr);
-		RotateArr(arr);
+		fputs("저자: ", stdout); scanf("%s", b[i].Author_name);
+		fputs("제목: ", stdout); scanf("%s", b[i].title);
+		fputs("페이지 수: ", stdout); scanf("%d", &b[i].number);//fputs는 공백 포함 문자열을 받을수 있음
 	}
+	fputs("도저 정보 출력", stdout);
 
-	return 0;
-}
-
-
-void ShowArr(int(*arr)[4])
-{
-	int i, j;
-	printf("----Show Array----\n");
-
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 3; i++)
 	{
-		for (j = 0; j < 4; j++)
-			printf("%5d", arr[i][j]);
-
-		printf("\n");
-	}
-	printf("1원원 \n", i);
-}
-
-void RotateArr(int(*arr)[4])
-{
-	int i, j;
-	int temp[4][4];
-
-	for (i = 0; i < 4; i++)
-	{
-		for (j = 0; j < 4; j++)
-			temp[j][3 - i] = arr[i][j];
-	}
-
-	for (i = 0; i < 4; i++)
-	{
-		for (j = 0; j < 4; j++)
-			arr[i][j] = temp[i][j];
+		
+		printf("book %d\n", i+1);
+		printf("저자: %s\n", b[i].Author_name);
+		printf("제목 : %s\n", b[i].title);
+		printf("페이지 수: %d\n", b[i].number);
 	}
 }
