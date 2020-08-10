@@ -4,19 +4,21 @@
 
 int main(void)
 {
-	int i;
-	
-	int num;
-
-	fputs("반복할 수 :", stdout); scanf("%d", &num);
-	for (i = 0; i < num; i++)
+	struct A
 	{
-		
-		printf("%d \n", i + 80);
+		int name;
+	};
+	
+	struct A st;
+
+	puts("이름 입력(아스키로)>>");
+	scanf("%d", &st.name);
+
+	int i;
+
+	for (i = 0; i < st.name; i++)//이것도 됨!
+	{
+		printf("%d \n", i + 1);
 	}
-
-	double fabs(double i);
-
-	printf("%g", i);//i의 절댓갑 반환!
 	return 0;
 }
