@@ -2,27 +2,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct point
+typedef struct studout
 {
-	int xpos;//두개!
-	int ypos;
-}Point;//sturct point == Point과 같다.
+	char name[10];//학생이름
+	char humannumber[20];//학생 번호
+	char school[20];//학교이름
+	char majir[20];//전공선택
+	int year;//학년
 
-void SP(Point* ptr1, Point* ptr2)//구조체 포인터 변수 선언 ptr1 / ptr2
+}S;
+
+void SS(S* ptr)
 {
-	Point temp = *ptr1;// temp =  2.4
-	*ptr1 = *ptr2;//2 .4 = 5. 7 즉(ptr1 = 5.7)
-	*ptr2 = temp;// 5. 7 = 2. 4 즉(ptr2 = 2.4)
+	printf("학년 : %d\n", ptr->year);
 }
 
 int main(void)
 {
-	Point pos1 = { 2, 4 };// 2 = xpos 4 = ypos
-	Point pos2 = { 5, 7 };//5 = xpos 7 = ypos
-	
-	SP(&pos1, &pos2);//&가리키다(저장)
+	//int num = 0;
 
-	printf("[%d, %d] \n", pos1.xpos, pos1.ypos);//5 .7
-	printf("[%d, %d]\n", pos2.xpos, pos2.ypos);//2. 4
+	S arr[10];
+
+	int i;
+
+	//puts("입력할 학생의 수많큼 입력>>", stdout); scanf("%d", &num);
+
+	for (i = 0; i < 3; i++)
+	{
+		printf("%d번 학생을 입력합니다.\n", i+1);
+		fputs("이름 :", stdout); scanf("%s", arr[i].name);
+		fputs("번호 :", stdout); scanf("%s", arr[i].humannumber);
+		fputs("학교 :", stdout); scanf("%s", arr[i].school);
+		fputs("전공 :", stdout); scanf("%s", arr[i].majir);
+		fputs("학년 :", stdout); scanf("%d", &arr[i].year);
+	}
+
+	for (i = 0; i < 3; i++)
+	{
+		SS(&arr[i]);
+	}
 	return 0;
 }
