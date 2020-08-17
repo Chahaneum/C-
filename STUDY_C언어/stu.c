@@ -1,45 +1,55 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <stdlib.h>
-
-typedef struct studout
-{
-	char name[10];//학생이름
-	char humannumber[20];//학생 번호
-	char school[20];//학교이름
-	char majir[20];//전공선택
-	int year;//학년
-
-}S;
-
-void SS(S* ptr)
-{
-	printf("학년 : %d\n", ptr->year);
-}
+#include <string.h>
 
 int main(void)
 {
-	//int num = 0;
+	/*
+	
+	*/
 
-	S arr[10];
+	char text1[20];
+	char text2[20];
+	char inset[20];
 
-	int i;
-
-	//puts("입력할 학생의 수많큼 입력>>", stdout); scanf("%d", &num);
-
-	for (i = 0; i < 3; i++)
+	printf("전화번호 / 이름 입력:"); scanf("%s %s", text1, text2);
+	int i;  scanf("%d", &i);
+	if (i == 1)
 	{
-		printf("%d번 학생을 입력합니다.\n", i+1);
-		fputs("이름 :", stdout); scanf("%s", arr[i].name);
-		fputs("번호 :", stdout); scanf("%s", arr[i].humannumber);
-		fputs("학교 :", stdout); scanf("%s", arr[i].school);
-		fputs("전공 :", stdout); scanf("%s", arr[i].majir);
-		fputs("학년 :", stdout); scanf("%d", &arr[i].year);
+
+
+		printf("전화번호 찾기\n이름:"); scanf("%s", inset);
+
+		if (!strcmp(inset, text2))
+		{
+			printf("%s의 전화번호 : %s\n", inset, text1);
+		}
+
+		else
+		{
+			puts("Error");
+		}
 	}
 
-	for (i = 0; i < 3; i++)
-	{
-		SS(&arr[i]);
-	}
+	
+
+
+		char inset2[20];
+
+		printf("이름 찾기\n전화번호:"); scanf("%s", inset2);
+
+		if (!strcmp(inset2, text1))
+		{
+			printf("전화번호 %s의 이름 : %s\n", inset2, text2);
+		}
+
+
+
+		else
+		{
+			puts("Error");
+		}
+	
+
 	return 0;
 }
