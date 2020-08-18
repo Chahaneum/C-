@@ -1,35 +1,44 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <string.h>
 
-void R(int arr[], int len)
+void ret (char *less,char *come)
 {
-	int i, j;
-	int temp;
-
-	for (i = 0; i < len - 1; i++)
+	if (!strcmp(less, come))
 	{
-		for (j = 0; j < (len - i) - 1; j++)
-		{
-			if (arr[j] > arr[j + 1])
-			{
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-		}
+		printf("%s", less);
 	}
+	else
+	{
+		printf("Error\n");
+	}
+
+	
+}
+
+void str(void)
+{
+	puts("검색 프로그램에 오신것을 환영합니다! ");
+	fputs("문자 입력/>", stdout);
+}
+
+void t(void)
+{
+
 }
 int main(void)
 {
-	int arr[4] = { 3,2,4,1 };
-	int i;
+	char len[100],less[100], come[100];
 
-	R(arr, sizeof(arr) / sizeof(int));
+	
+	str();
+	scanf("%s", less);
 
-	for (i = 0; i < 4; i++)
-	{
-		printf("%d ", arr[i]);
-	}
+	printf("검색/>"); scanf("%s", come);
+	
+	ret(less, come);
+	
+	
 
 	return 0;
 }
