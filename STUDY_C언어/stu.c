@@ -26,7 +26,7 @@ void t(void)
 {
 
 }
-int main(void)
+int main_Sdfdf(void)
 {
 	char len[100],less[100], come[100];
 
