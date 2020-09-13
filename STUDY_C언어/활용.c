@@ -2,13 +2,15 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void)
+int main_00(void)
 {
-	FILE* fp = fopen("human.txt", "wt");
-	fputs("#이름: 윤성우 \n", fp);
-	fputs("#주민번호: 900208-1012589\n", fp);
-	fputs("#전화번호: 010-1111-2222\n", fp);
+	char n[100];
+	FILE* fp = fopen("human.txt", "rt");
+
+	while (fgets(n, sizeof(n), fp) != NULL)//전체 읽기.
+	{
+		printf(n);
+	}
 	fclose(fp);//OK!
 	return 0;
-
 }

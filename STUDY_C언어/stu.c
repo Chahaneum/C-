@@ -2,43 +2,15 @@
 #include <stdio.h>
 #include <string.h>
 
-void ret (char *less,char *come)
+int main(void)
 {
-	if (!strcmp(less, come))
-	{
-		printf("%s", less);
-	}
-	else
-	{
-		printf("Error\n");
-	}
+	FILE* fp = fopen("mystroy.txt", "wt");
 
-	
-}
+	fputs("#이름: 윤성우\n", fp);
+	fputs("#주민번호: 900208-1012589\n", fp);
+	fputs("#전화번호: 010-1111-2222\n", fp);
 
-void str(void)
-{
-	puts("검색 프로그램에 오신것을 환영합니다! ");
-	fputs("문자 입력/>", stdout);
-}
-
-void t(void)
-{
-
-}
-int main_Sdfdf(void)
-{
-	char len[100],less[100], come[100];
-
-	
-	str();
-	scanf("%s", less);
-
-	printf("검색/>"); scanf("%s", come);
-	
-	ret(less, come);
-	
-	
-
+	fclose(fp);
 	return 0;
 }
+//성공
