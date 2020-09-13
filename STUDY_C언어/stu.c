@@ -4,12 +4,15 @@
 
 int main(void)
 {
-	FILE* fp = fopen("mystroy.txt", "at");
+	char str[100];
+	FILE* fp = fopen("mystroy.txt", "rt");
 
-	fputs("#즐겨먹는 움식: 짬뽕, 탕수육", fp);
-	fputs("#취미:축구", fp);
+	while (fgets(str, sizeof(str), fp))
+	{
+		printf(str);
+	}
 
 	fclose(fp);
 	return 0;
 }
-//붙여넣기 성공
+//화면 출력성공
