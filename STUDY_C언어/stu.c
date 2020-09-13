@@ -4,13 +4,12 @@
 
 int main(void)
 {
-	FILE* fp = fopen("mystroy.txt", "wt");
+	FILE* fp = fopen("mystroy.txt", "at");
 
-	fputs("#이름: 윤성우\n", fp);
-	fputs("#주민번호: 900208-1012589\n", fp);
-	fputs("#전화번호: 010-1111-2222\n", fp);
+	fputs("#즐겨먹는 움식: 짬뽕, 탕수육", fp);
+	fputs("#취미:축구", fp);
 
 	fclose(fp);
 	return 0;
 }
-//성공
+//붙여넣기 성공
