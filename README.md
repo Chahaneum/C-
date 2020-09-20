@@ -1,7 +1,14 @@
-# 개인적인 공부 공간입니다
+# This is a place to study the c language!
 
-- 여기는 저의 c언어 관련 공부공간 입니다
+- If you are studying c language, please refer!
 
-- 여기서 많은 것들을 공부하고 있으니 c언어를 공부하고 싶으신 분들이면 참고 하셔도 좋습니다
+  - Can I use the source code here? 
+  
+    Sure!
+  
+  - May I ask about the source code here? 
+  
+    Of course!  
+    Let me know right away what you don't know!
 
-- 개인적인 공부공간이라 질문은 받지 않습니다
+- It's difficult, but let's have fun learning C language together!
