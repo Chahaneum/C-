@@ -1,18 +1,14 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include <Windows.h>
+#define OX(a,b) ((a) > (b) ? (a) : (b))
 
 int main(void)
 {
-	char str[100];
-	FILE* fp = fopen("mystroy.txt", "rt");
-
-	while (fgets(str, sizeof(str), fp))
-	{
-		printf(str);
-	}
-
-	fclose(fp);
+	int n, s;
+	printf("1/2 입력");
+	scanf("%d %d", &n, &s);
+	printf("%d is big", OX(n, s));
 	return 0;
 }
-//화면 출력성공
